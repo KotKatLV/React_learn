@@ -1,1 +1,1 @@
-## Simple apps like ###Todo list###
+## Simple apps like Todo list
