@@ -68,7 +68,7 @@ export default class App extends Component {
     }
 
     onToggleDone = (id) => {
-        this.setState(({todoData}) => {
+        this.setState(({ todoData }) => {
             return{
                 todoData: this.toggleProperty(todoData, id,  'done')
             }
@@ -76,12 +76,7 @@ export default class App extends Component {
     };
 
     search(items, term){
-
-        if (term.length === 0){
-            return items;
-        }
-
-        return items.filter((item) => item.label.toLowerCase().indexOf(term.toLowerCase()) > -1);
+        return term.length === 0 ? items : items.filter((item) => item.label.toLowerCase().indexOf(term.toLowerCase()) > -1);
     };
 
     filter(items, filter){
@@ -107,27 +102,30 @@ export default class App extends Component {
 
     render()
     {
-        const {todoData, term, filter} = this.state;
+        const { todoData, term, filter } = this.state;
         const visibleItems = this.filter(this.search(todoData, term), filter);
         const doneCount = todoData.filter((el) => el.done).length;
         const todoCount = todoData.length - doneCount;
 
         return(
             <div className="todo-app">
-                <AppHeader toDo={ todoCount } done={ doneCount } />
+                <AppHeader
+                    toDo={ todoCount }
+                    done={ doneCount } />
+
                 <div className="top-panel d-flex">
-                    <SearchPanel onItemSearch={ this.onSearchChange }/>
+                    <SearchPanel
+                        onItemSearch={ this.onSearchChange }/>
                     <ItemStatusFilter
                         filter={filter}
-                        onFilterChange={this.onFilterChange}/>
+                        onFilterChange={ this.onFilterChange }/>
                 </div>
 
                 <TodoList
                     todos={ visibleItems }
                     onDeleted={ this.deleteItem }
                     onToggleImportant={ this.onToggleImportant }
-                    onToggleDone={ this.onToggleDone }
-                />
+                    onToggleDone={ this.onToggleDone }/>
                 <ItemAddForm
                     onItemAdded={ this.addItem }/>
             </div>
