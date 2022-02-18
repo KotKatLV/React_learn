@@ -1,33 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4a0b4c5a-e5aa-49cb-878b-59028ba22dc9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stardb/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stardb/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stardb/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stardb/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stardb/public/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stardb/public/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stardb/public/logo192.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stardb/public/logo512.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stardb/public/manifest.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stardb/public/robots.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stardb/src/App.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stardb/src/App.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stardb/src/App.test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stardb/src/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stardb/src/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stardb/src/logo.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stardb/src/reportWebVitals.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stardb/src/setupTests.js" afterDir="false" />
+    <list default="true" id="4a0b4c5a-e5aa-49cb-878b-59028ba22dc9" name="Changes" comment="Update README.md">
+      <change afterPath="$PROJECT_DIR$/stardb/src/components/app/app.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stardb/src/components/app/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stardb/src/components/app/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stardb/src/components/header/header.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stardb/src/components/header/header.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stardb/src/components/header/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stardb/src/components/item-list/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stardb/src/components/item-list/item-list.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stardb/src/components/item-list/item-list.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stardb/src/components/person-details/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stardb/src/components/person-details/person-details.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stardb/src/components/person-details/person-details.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stardb/src/components/planet-details/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stardb/src/components/planet-details/planet-details.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stardb/src/components/planet-details/planet-details.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stardb/src/components/random-planet/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stardb/src/components/random-planet/random-planet.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stardb/src/components/random-planet/random-planet.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stardb/src/components/starship-details/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stardb/src/components/starship-details/starship-details.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stardb/src/components/starship-details/starship-details.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stardb/src/services/swapi-service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stardb/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/stardb/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/stardb/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stardb/public/logo192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/stardb/public/logo512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/stardb/public/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/stardb/public/robots.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/stardb/src/App.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/stardb/src/App.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/stardb/src/App.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/stardb/src/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/stardb/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/stardb/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stardb/src/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/stardb/src/reportWebVitals.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/stardb/src/setupTests.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Konstantin Kapatkov &lt;kotkat.lv@gmail.com&gt;" />
+      </list>
+    </option>
     <option name="PUSH_TAGS">
       <GitPushTagMode>
         <option name="argument" value="--follow-tags" />
@@ -35,6 +66,14 @@
       </GitPushTagMode>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -55,6 +94,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path" value="node" />
@@ -85,7 +125,17 @@
       <option name="presentableId" value="Default" />
       <updated>1645125520251</updated>
       <workItem from="1645125522036" duration="317000" />
+      <workItem from="1645125859239" duration="391000" />
+      <workItem from="1645128212421" duration="9399000" />
     </task>
+    <task id="LOCAL-00001" summary="Update README.md">
+      <created>1645125874645</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1645125874645</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -104,5 +154,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Update README.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update README.md" />
   </component>
 </project>
