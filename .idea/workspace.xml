@@ -2,43 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a0b4c5a-e5aa-49cb-878b-59028ba22dc9" name="Changes" comment="Update README.md">
-      <change afterPath="$PROJECT_DIR$/stardb/src/components/app/app.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stardb/src/components/app/app.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stardb/src/components/app/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stardb/src/components/header/header.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stardb/src/components/header/header.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stardb/src/components/header/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stardb/src/components/item-list/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stardb/src/components/item-list/item-list.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stardb/src/components/item-list/item-list.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stardb/src/components/person-details/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stardb/src/components/person-details/person-details.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stardb/src/components/person-details/person-details.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stardb/src/components/planet-details/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stardb/src/components/planet-details/planet-details.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stardb/src/components/planet-details/planet-details.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stardb/src/components/random-planet/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stardb/src/components/random-planet/random-planet.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stardb/src/components/random-planet/random-planet.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stardb/src/components/starship-details/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stardb/src/components/starship-details/starship-details.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stardb/src/components/starship-details/starship-details.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stardb/src/services/swapi-service.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stardb/src/components/spinner/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stardb/src/components/spinner/spinner.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stardb/src/components/spinner/spinner.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stardb/public/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stardb/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/stardb/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stardb/public/logo192.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stardb/public/logo512.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stardb/public/manifest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stardb/public/robots.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stardb/src/App.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stardb/src/App.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stardb/src/App.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stardb/src/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stardb/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/stardb/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stardb/src/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stardb/src/reportWebVitals.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stardb/src/setupTests.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/stardb/src/components/random-planet/random-planet.css" beforeDir="false" afterPath="$PROJECT_DIR$/stardb/src/components/random-planet/random-planet.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stardb/src/components/random-planet/random-planet.js" beforeDir="false" afterPath="$PROJECT_DIR$/stardb/src/components/random-planet/random-planet.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stardb/src/services/swapi-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/stardb/src/services/swapi-service.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +20,7 @@
       <list>
         <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -89,6 +60,7 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -126,7 +98,7 @@
       <updated>1645125520251</updated>
       <workItem from="1645125522036" duration="317000" />
       <workItem from="1645125859239" duration="391000" />
-      <workItem from="1645128212421" duration="9399000" />
+      <workItem from="1645128212421" duration="15932000" />
     </task>
     <task id="LOCAL-00001" summary="Update README.md">
       <created>1645125874645</created>
@@ -135,7 +107,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645125874645</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Update README.md">
+      <created>1645177808889</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1645177808889</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
