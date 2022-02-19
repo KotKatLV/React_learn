@@ -2,11 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a0b4c5a-e5aa-49cb-878b-59028ba22dc9" name="Changes" comment="Update README.md">
-      <change afterPath="$PROJECT_DIR$/stardb/src/components/spinner/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stardb/src/components/spinner/spinner.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stardb/src/components/spinner/spinner.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stardb/src/components/error-indicator/dv.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stardb/src/components/error-indicator/error-indicator.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stardb/src/components/error-indicator/error-indicator.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stardb/src/components/error-indicator/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stardb/src/components/random-planet/random-planet.css" beforeDir="false" afterPath="$PROJECT_DIR$/stardb/src/components/random-planet/random-planet.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stardb/src/components/app/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/stardb/src/components/app/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stardb/src/components/item-list/item-list.js" beforeDir="false" afterPath="$PROJECT_DIR$/stardb/src/components/item-list/item-list.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stardb/src/components/person-details/person-details.js" beforeDir="false" afterPath="$PROJECT_DIR$/stardb/src/components/person-details/person-details.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/stardb/src/components/random-planet/random-planet.js" beforeDir="false" afterPath="$PROJECT_DIR$/stardb/src/components/random-planet/random-planet.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/stardb/src/services/swapi-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/stardb/src/services/swapi-service.js" afterDir="false" />
     </list>
@@ -18,9 +21,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="HTML File" />
         <option value="CSS File" />
         <option value="JavaScript File" />
-        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -65,13 +68,18 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/stardb/src/components/error-indicator" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\reactlearn\stardb\src\components\error-indicator" />
+    </key>
   </component>
   <component name="RunManager" selected="npm.npm start">
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
@@ -98,7 +106,8 @@
       <updated>1645125520251</updated>
       <workItem from="1645125522036" duration="317000" />
       <workItem from="1645125859239" duration="391000" />
-      <workItem from="1645128212421" duration="15932000" />
+      <workItem from="1645128212421" duration="18889000" />
+      <workItem from="1645260234371" duration="6960000" />
     </task>
     <task id="LOCAL-00001" summary="Update README.md">
       <created>1645125874645</created>
@@ -114,7 +123,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645177808889</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Update README.md">
+      <created>1645184465484</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1645184465484</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
