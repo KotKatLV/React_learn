@@ -2,34 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a0b4c5a-e5aa-49cb-878b-59028ba22dc9" name="Changes" comment="Update README.md">
-      <change afterPath="$PROJECT_DIR$/stardb/src/components/error-boundry/error-boundry.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stardb/src/components/error-boundry/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stardb/src/components/hoc-helpers/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stardb/src/components/hoc-helpers/with-data.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stardb/src/components/row/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stardb/src/components/row/row.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stardb/src/components/row/row.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stardb/src/components/sw-components/details.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stardb/src/components/sw-components/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stardb/src/components/sw-components/item-lists.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stardb/src/components/app/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/stardb/src/components/app/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/stardb/src/components/app/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/stardb/src/components/app/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stardb/src/components/error-indicator/error-indicator.js" beforeDir="false" afterPath="$PROJECT_DIR$/stardb/src/components/error-indicator/error-indicator.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stardb/src/components/header/header.js" beforeDir="false" afterPath="$PROJECT_DIR$/stardb/src/components/header/header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stardb/src/components/item-list/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/stardb/src/components/item-list/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stardb/src/components/item-list/item-list.css" beforeDir="false" afterPath="$PROJECT_DIR$/stardb/src/components/item-list/item-list.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stardb/src/components/hoc-helpers/with-data.js" beforeDir="false" afterPath="$PROJECT_DIR$/stardb/src/components/hoc-helpers/with-data.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stardb/src/components/item-details/item-details.js" beforeDir="false" afterPath="$PROJECT_DIR$/stardb/src/components/item-details/item-details.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/stardb/src/components/item-list/item-list.js" beforeDir="false" afterPath="$PROJECT_DIR$/stardb/src/components/item-list/item-list.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stardb/src/components/person-details/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/stardb/src/components/item-details/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stardb/src/components/person-details/person-details.css" beforeDir="false" afterPath="$PROJECT_DIR$/stardb/src/components/item-details/item-details.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stardb/src/components/person-details/person-details.js" beforeDir="false" afterPath="$PROJECT_DIR$/stardb/src/components/item-details/item-details.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stardb/src/components/planet-details/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/stardb/src/components/error-button/error-button.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stardb/src/components/planet-details/planet-details.css" beforeDir="false" afterPath="$PROJECT_DIR$/stardb/src/components/error-button/error-button.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stardb/src/components/planet-details/planet-details.js" beforeDir="false" afterPath="$PROJECT_DIR$/stardb/src/components/people-page/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stardb/src/components/random-planet/random-planet.js" beforeDir="false" afterPath="$PROJECT_DIR$/stardb/src/components/random-planet/random-planet.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stardb/src/components/spinner/spinner.js" beforeDir="false" afterPath="$PROJECT_DIR$/stardb/src/components/spinner/spinner.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stardb/src/components/starship-details/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/stardb/src/components/error-button/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stardb/src/components/starship-details/starship-details.css" beforeDir="false" afterPath="$PROJECT_DIR$/stardb/src/components/people-page/people-page.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stardb/src/components/starship-details/starship-details.js" beforeDir="false" afterPath="$PROJECT_DIR$/stardb/src/components/people-page/people-page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stardb/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/stardb/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stardb/src/services/swapi-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/stardb/src/services/swapi-service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stardb/src/components/row/row.js" beforeDir="false" afterPath="$PROJECT_DIR$/stardb/src/components/row/row.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,7 +108,9 @@
       <workItem from="1645128212421" duration="18889000" />
       <workItem from="1645260234371" duration="14670000" />
       <workItem from="1645428328561" duration="652000" />
-      <workItem from="1645437285410" duration="1991000" />
+      <workItem from="1645437285410" duration="2649000" />
+      <workItem from="1645446653148" duration="1506000" />
+      <workItem from="1645474888002" duration="3283000" />
     </task>
     <task id="LOCAL-00001" summary="Update README.md">
       <created>1645125874645</created>
@@ -157,7 +140,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645267750272</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Update README.md">
+      <created>1645440261832</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1645440261832</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
