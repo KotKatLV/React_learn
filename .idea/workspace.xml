@@ -2,15 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a0b4c5a-e5aa-49cb-878b-59028ba22dc9" name="Changes" comment="Update README.md">
-      <change afterPath="$PROJECT_DIR$/stardb/src/components/sw-components/details.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stardb/src/components/sw-components/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stardb/src/components/sw-components/item-lists.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stardb/src/components/hoc-helpers/with-swapi-service.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stardb/src/components/sw-components/person-details.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stardb/src/components/sw-components/planet-details.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stardb/src/components/sw-components/starship-details.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stardb/src/components/swapi-service-context/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stardb/src/components/swapi-service-context/swapi-service-context.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stardb/src/services/dummy-swapi-service.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/stardb/src/components/app/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/stardb/src/components/app/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stardb/src/components/hoc-helpers/with-data.js" beforeDir="false" afterPath="$PROJECT_DIR$/stardb/src/components/hoc-helpers/with-data.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stardb/src/components/item-details/item-details.js" beforeDir="false" afterPath="$PROJECT_DIR$/stardb/src/components/item-details/item-details.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stardb/src/components/item-list/item-list.js" beforeDir="false" afterPath="$PROJECT_DIR$/stardb/src/components/item-list/item-list.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stardb/src/components/row/row.js" beforeDir="false" afterPath="$PROJECT_DIR$/stardb/src/components/row/row.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stardb/src/components/hoc-helpers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/stardb/src/components/hoc-helpers/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stardb/src/components/sw-components/details.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/stardb/src/components/sw-components/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/stardb/src/components/sw-components/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +113,10 @@
       <workItem from="1645428328561" duration="652000" />
       <workItem from="1645437285410" duration="2649000" />
       <workItem from="1645446653148" duration="1506000" />
-      <workItem from="1645474888002" duration="3283000" />
+      <workItem from="1645474888002" duration="10546000" />
+      <workItem from="1645537003963" duration="95000" />
+      <workItem from="1645556148780" duration="3232000" />
+      <workItem from="1645605343542" duration="585000" />
     </task>
     <task id="LOCAL-00001" summary="Update README.md">
       <created>1645125874645</created>
@@ -147,7 +153,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645440261832</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Update README.md">
+      <created>1645478248139</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1645478248139</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

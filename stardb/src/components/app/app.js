@@ -3,13 +3,12 @@ import React, { Component } from 'react';
 import Header from '../header';
 import RandomPlanet from '../random-planet';
 import ErrorBoundry from '../error-boundry';
-import Row from "../row/row";
-import ItemDetails, { Record } from "../item-details/item-details";
 import SwapiService from "../../services/swapi-service";
-import ItemList from '../item-list';
 import './app.css';
-import {PersonList, PlanetList, StarshipList} from "../sw-components/item-lists";
-import {PersonDetails, PlanetDetails, StarshipDetails} from "../sw-components/details";
+import {PersonList, PlanetList, StarshipList} from "../sw-components";
+import {PersonDetails, PlanetDetails, StarshipDetails} from "../sw-components";
+import { SwapiServieProvider } from "../swapi-service-context/swapi-service-context";
+import DummySwapiService from "../../services/dummy-swapi-service";
 
 export default class App extends Component {
 
@@ -19,22 +18,21 @@ export default class App extends Component {
         showRandomPlanet: true
     };
 
-    toggleRandomPlanet = () => {
-        this.setState((state) => {
-            return {
-                showRandomPlanet: !state.showRandomPlanet
-            }
-        });
-    };
+    // toggleRandomPlanet = () => {
+    //     this.setState((state) => {
+    //         return {
+    //             showRandomPlanet: !state.showRandomPlanet
+    //         }
+    //     });
+    // };
 
     render() {
 
-        const planet = this.state.showRandomPlanet ?
-            <RandomPlanet/> :
-            null;
+        const planet = this.state.showRandomPlanet ? <RandomPlanet/> :  null;
 
         return (
             <ErrorBoundry>
+                <SwapiServieProvider value={this.swapiService}>
                 <div className="stardb-app">
                     <Header />
 
@@ -47,6 +45,7 @@ export default class App extends Component {
                     <PlanetList />
 
                 </div>
+                </SwapiServieProvider>
             </ErrorBoundry>
         );
     }
