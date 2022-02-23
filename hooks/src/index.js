@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 const App = () => {
 
-    const [value, setValue] = useState(0);
+    const [value, setValue] = useState(1);
     const [visible, setVisible] = useState(true);
 
     if (visible){
@@ -15,9 +15,8 @@ const App = () => {
                 </button>
                 <button
                     onClick={() => setVisible(false)}>hide</button>
-                {/*<ClassCounter value = {value} />*/}
-                {/*<HookCounter value = {value} />*/}
-                <Notification />
+
+                <PlanetInfo id={value}/>
             </div>
         )
     }
@@ -26,55 +25,24 @@ const App = () => {
     }
 }
 
-const Notification = () => {
+const PlanetInfo = ( {id} ) => {
 
-    const [visible, setVisible] = useState(true);
+    const [ planetName, setplanetName ] = useState(null);
+    const api = `https://swapi.dev/api/planets/${id}/`;
 
     useEffect(() => {
-        const timeout = setTimeout(() => setVisible(false), 2500)
-        return () => clearTimeout(timeout);
-    }, []);
+        let cancelled = false;
+        fetch(api)
+            .then(res => res.json())
+            .then(data => !cancelled && setplanetName(data.name));
+        return () => cancelled = true;
+    }, [id])
 
     return(
-      <div>
-          { visible && <p>Hello</p>}
-      </div>
+        <div>
+            {id} - {planetName}
+        </div>
     )
 }
-
-// const HookCounter = ({ value }) => {
-//     useEffect(() => {
-//         console.log('mount');
-//         return () => console.log('unmount');
-//     }, []);
-//
-//     useEffect(() => {
-//         console.log('update');
-//     });
-//
-//     return <p> {value} </p>;
-// }
-//
-// class ClassCounter extends Component {
-//
-//     componentDidMount()
-//     {
-//         console.log('class: DidMount');
-//     }
-//
-//     componentDidUpdate(prevProps, prevState, snapshot)
-//     {
-//         console.log('class: Update');
-//     }
-//
-//     componentWillUnmount()
-//     {
-//         console.log('class: WillUnmount');
-//     }
-//
-//     render(){
-//         return <p>{this.props.value}</p>
-//     }
-// }
 
 ReactDOM.render(<App />, document.getElementById('root'));
