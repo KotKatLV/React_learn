@@ -18,6 +18,10 @@ const ItemList = (props) => {
         );
     });
 
+    ItemList.defaulltProps = {
+        onItemSelected: () => {}
+    }
+
     return (
         <ul className="item-list list-group">
             {items}
