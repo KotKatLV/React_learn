@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="627d9d89-6872-4b08-b285-037b9e0d6748" name="Changes" comment=".">
+    <list default="true" id="627d9d89-6872-4b08-b285-037b9e0d6748" name="Changes" comment="Merge remote-tracking branch 'origin/hooks' into hooks&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;hooks/src/index.js">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hooks/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/hooks/src/index.js" afterDir="false" />
     </list>
@@ -80,7 +80,7 @@
       <option name="presentableId" value="Default" />
       <updated>1645616582563</updated>
       <workItem from="1645616584440" duration="1221000" />
-      <workItem from="1645631977255" duration="6621000" />
+      <workItem from="1645631977255" duration="8632000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <created>1645616936550</created>
@@ -103,7 +103,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645637474956</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Merge remote-tracking branch 'origin/hooks' into hooks&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;hooks/src/index.js">
+      <created>1645638751268</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1645638751268</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -122,7 +129,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="." />
-    <option name="LAST_COMMIT_MESSAGE" value="." />
+    <MESSAGE value="Merge remote-tracking branch 'origin/hooks' into hooks&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;hooks/src/index.js" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/hooks' into hooks&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;hooks/src/index.js" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>
