@@ -2,8 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="627d9d89-6872-4b08-b285-037b9e0d6748" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/reactlearn.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hooks/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hooks/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/hooks/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hooks/public/logo192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hooks/public/logo512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hooks/public/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hooks/public/robots.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hooks/src/App.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hooks/src/App.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hooks/src/App.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hooks/src/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hooks/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/hooks/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hooks/src/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hooks/src/reportWebVitals.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hooks/src/setupTests.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -11,6 +24,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--follow-tags" />
+        <option name="title" value="Current Branch" />
+      </GitPushTagMode>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -55,8 +74,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1645616582563</updated>
-      <workItem from="1645616584440" duration="301000" />
+      <workItem from="1645616584440" duration="1114000" />
     </task>
+    <task id="LOCAL-00001" summary=".">
+      <created>1645616936550</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1645616936550</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -72,5 +99,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="." />
+    <option name="LAST_COMMIT_MESSAGE" value="." />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>
