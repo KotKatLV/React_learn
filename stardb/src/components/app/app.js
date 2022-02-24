@@ -10,7 +10,8 @@ import { SwapiServieProvider } from "../swapi-service-context/swapi-service-cont
 
 import './app.css';
 
-import {BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import {BrowserRouter as Router, Routes, Route, useParams} from 'react-router-dom';
+import {StarshipDetails} from "../sw-components";
 
 export default class App extends Component {
 
@@ -36,10 +37,11 @@ export default class App extends Component {
                             <Header onServiceChange={this.onServiceChange} />
                             <RandomPlanet />
                             <Routes>
-                                <Route path="/" element={<Welcome/>} exact/>
+                                <Route path="/" element={<Welcome/>}/>
                                 <Route path="/people" element={<PeoplePage/>} />
                                 <Route path="/planets" element={<PlanetPage/>} />
                                 <Route path="/starships" element={<StarshipPage/>} />
+                                <Route path="/starships/:id" element={<StarshipDetails/>}/>
                             </Routes>
                         </div>
                     </Router>
