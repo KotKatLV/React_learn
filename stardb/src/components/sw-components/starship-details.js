@@ -1,7 +1,7 @@
 import React from "react";
+import { useParams } from "react-router-dom";
 import ItemDetails, { Record } from "../item-details";
 import { withSwapiService } from '../hoc-helpers'
-import { useParams } from "react-router-dom";
 
 const StarshipDetails = (props) => {
     const { id } = useParams();

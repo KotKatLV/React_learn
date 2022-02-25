@@ -3,8 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="4a0b4c5a-e5aa-49cb-878b-59028ba22dc9" name="Changes" comment="Merge remote-tracking branch 'origin/StarDB' into StarDB">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stardb/src/components/header/header.js" beforeDir="false" afterPath="$PROJECT_DIR$/stardb/src/components/header/header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stardb/src/components/app/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/stardb/src/components/app/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stardb/src/components/item-details/item-details.js" beforeDir="false" afterPath="$PROJECT_DIR$/stardb/src/components/item-details/item-details.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stardb/src/components/pages/people-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/stardb/src/components/pages/people-page.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/stardb/src/components/pages/starships-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/stardb/src/components/pages/starships-page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stardb/src/components/sw-components/person-details.js" beforeDir="false" afterPath="$PROJECT_DIR$/stardb/src/components/sw-components/person-details.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stardb/src/components/sw-components/starship-details.js" beforeDir="false" afterPath="$PROJECT_DIR$/stardb/src/components/sw-components/starship-details.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +119,9 @@
       <workItem from="1645605343542" duration="7447000" />
       <workItem from="1645612860719" duration="1706000" />
       <workItem from="1645652787012" duration="5462000" />
-      <workItem from="1645690195331" duration="12119000" />
+      <workItem from="1645690195331" duration="12146000" />
+      <workItem from="1645706961609" duration="618000" />
+      <workItem from="1645786087479" duration="6104000" />
     </task>
     <task id="LOCAL-00001" summary="Update README.md">
       <created>1645125874645</created>
@@ -201,7 +207,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645701771845</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Merge remote-tracking branch 'origin/StarDB' into StarDB">
+      <created>1645703831498</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1645703831498</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
