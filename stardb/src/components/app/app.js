@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
+import {BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 import Header from '../header';
 import RandomPlanet from '../random-planet';
 import ErrorBoundry from '../error-boundry';
 import SwapiService from "../../services/swapi-service";
 import DummySwapiService from "../../services/dummy-swapi-service";
-
-import { PeoplePage, PlanetPage, StarshipPage, SecretPage, LoginPage } from "../pages";
+import {PersonDetails, StarshipDetails} from "../sw-components";
+import {PeoplePage, PlanetPage, StarshipPage, SecretPage, LoginPage, NotFoundPage, WelcomePage } from "../pages";
 import { SwapiServieProvider } from "../swapi-service-context/swapi-service-context";
 
 import './app.css';
-
-import {BrowserRouter as Router, Routes, Route, useParams} from 'react-router-dom';
-import {PersonDetails, StarshipDetails} from "../sw-components";
 
 export default class App extends Component {
 
@@ -47,7 +46,7 @@ export default class App extends Component {
                             <Header onServiceChange={this.onServiceChange} />
                             <RandomPlanet />
                             <Routes>
-                                <Route path="/" element={<Welcome/>}/>
+                                <Route path="/" element={<WelcomePage />}/>
                                 <Route path="people">
                                     <Route path="" element={<PeoplePage/>} />
                                     <Route path=":id" element={<PersonDetails/>}/>
@@ -59,6 +58,7 @@ export default class App extends Component {
                                 </Route>
                                 <Route path="/login" element={<LoginPage isLoggedIn={isLoggedIn} onLogin={this.onLogin}/>}/>
                                 <Route path="/secret" element={<SecretPage isLoggedIn={isLoggedIn}/>}/>
+                                <Route path="*" element={<NotFoundPage />}/>
                             </Routes>
                         </div>
                     </Router>
@@ -66,10 +66,4 @@ export default class App extends Component {
             </ErrorBoundry>
         );
     }
-}
-
-const Welcome = () =>{
-    return(
-        <h2>Welcome to StarDB</h2>
-    );
 }

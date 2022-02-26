@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a0b4c5a-e5aa-49cb-878b-59028ba22dc9" name="Changes" comment="Merge remote-tracking branch 'origin/StarDB' into StarDB">
-      <change afterPath="$PROJECT_DIR$/stardb/src/components/pages/login-page.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stardb/src/components/pages/secret-page.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stardb/src/components/pages/not-found-page.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stardb/src/components/pages/welcome-page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_02_2022_20_17__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_02_2022_20_17__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_02_2022_20_17__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_02_2022_20_17__Changes_1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/stardb/src/components/app/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/stardb/src/components/app/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stardb/src/components/header/header.js" beforeDir="false" afterPath="$PROJECT_DIR$/stardb/src/components/header/header.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/stardb/src/components/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/stardb/src/components/pages/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -123,7 +124,7 @@
       <workItem from="1645706961609" duration="618000" />
       <workItem from="1645786087479" duration="6188000" />
       <workItem from="1645809536451" duration="164000" />
-      <workItem from="1645866305497" duration="3476000" />
+      <workItem from="1645866305497" duration="4557000" />
     </task>
     <task id="LOCAL-00001" summary="Update README.md">
       <created>1645125874645</created>
@@ -244,7 +245,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645809488762</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Merge remote-tracking branch 'origin/StarDB' into StarDB">
+      <created>1645869902674</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1645869902674</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
