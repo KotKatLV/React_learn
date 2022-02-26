@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a0b4c5a-e5aa-49cb-878b-59028ba22dc9" name="Changes" comment="Merge remote-tracking branch 'origin/StarDB' into StarDB">
+      <change afterPath="$PROJECT_DIR$/stardb/src/components/pages/login-page.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stardb/src/components/pages/secret-page.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/stardb/src/components/app/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/stardb/src/components/app/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stardb/src/components/item-details/item-details.js" beforeDir="false" afterPath="$PROJECT_DIR$/stardb/src/components/item-details/item-details.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stardb/src/components/pages/people-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/stardb/src/components/pages/people-page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stardb/src/components/pages/starships-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/stardb/src/components/pages/starships-page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stardb/src/components/sw-components/person-details.js" beforeDir="false" afterPath="$PROJECT_DIR$/stardb/src/components/sw-components/person-details.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stardb/src/components/sw-components/starship-details.js" beforeDir="false" afterPath="$PROJECT_DIR$/stardb/src/components/sw-components/starship-details.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stardb/src/components/header/header.js" beforeDir="false" afterPath="$PROJECT_DIR$/stardb/src/components/header/header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stardb/src/components/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/stardb/src/components/pages/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +41,7 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -121,7 +121,9 @@
       <workItem from="1645652787012" duration="5462000" />
       <workItem from="1645690195331" duration="12146000" />
       <workItem from="1645706961609" duration="618000" />
-      <workItem from="1645786087479" duration="6104000" />
+      <workItem from="1645786087479" duration="6188000" />
+      <workItem from="1645809536451" duration="164000" />
+      <workItem from="1645866305497" duration="3476000" />
     </task>
     <task id="LOCAL-00001" summary="Update README.md">
       <created>1645125874645</created>
@@ -214,7 +216,35 @@
       <option name="project" value="LOCAL" />
       <updated>1645703831498</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Merge remote-tracking branch 'origin/StarDB' into StarDB">
+      <created>1645809430113</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1645809430113</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Merge remote-tracking branch 'origin/StarDB' into StarDB">
+      <created>1645809452838</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1645809452838</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Merge remote-tracking branch 'origin/StarDB' into StarDB">
+      <created>1645809478688</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1645809478688</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Merge remote-tracking branch 'origin/StarDB' into StarDB">
+      <created>1645809488762</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1645809488762</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

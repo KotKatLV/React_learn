@@ -1,0 +1,232 @@
+Index: stardb/src/components/sw-components/person-details.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React from \"react\";\r\nimport ItemDetails, {Record} from \"../item-details\";\r\nimport  { withSwapiService } from '../hoc-helpers'\r\n\r\nconst PersonDetails = (props) => {\r\n    return(\r\n        <ItemDetails {...props}>\r\n            <Record field=\"gender\" label=\"Gender\" />\r\n            <Record field=\"eyeColor\" label=\"Eye Color\" />\r\n        </ItemDetails>\r\n    )\r\n}\r\n\r\nconst mapMethodsToProps = (swapiService) => {\r\n    return{\r\n        getData: swapiService.getPerson,\r\n        getImageUrl: swapiService.getPersonImage\r\n    }\r\n}\r\n\r\nexport default withSwapiService(mapMethodsToProps)(PersonDetails);
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/stardb/src/components/sw-components/person-details.js b/stardb/src/components/sw-components/person-details.js
+--- a/stardb/src/components/sw-components/person-details.js	(revision 110cecaffe28b655aecf832da316bb063a46ad45)
++++ b/stardb/src/components/sw-components/person-details.js	(date 1645809440598)
+@@ -1,13 +1,19 @@
+ import React from "react";
+-import ItemDetails, {Record} from "../item-details";
++import { useParams } from "react-router-dom";
++import ItemDetails, { Record } from "../item-details";
+ import  { withSwapiService } from '../hoc-helpers'
+ 
+ const PersonDetails = (props) => {
++
++    const { id } = useParams();
++    console.log(id)
++
+     return(
+-        <ItemDetails {...props}>
+-            <Record field="gender" label="Gender" />
+-            <Record field="eyeColor" label="Eye Color" />
+-        </ItemDetails>
++            <ItemDetails {...props} itemId={id}>
++                <Record field="gender" label="Gender" />
++                <Record field="eyeColor" label="Eye Color" />
++            </ItemDetails>
++
+     )
+ }
+ 
+Index: stardb/src/components/pages/people-page.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React, { Component } from \"react\";\r\nimport Row from \"../row\";\r\nimport {PersonDetails, PersonList} from \"../sw-components\";\r\n\r\nexport default class PeoplePage extends Component {\r\n    state = {\r\n        selectedItem: null\r\n    }\r\n\r\n    onItemSelected = (selectedItem) => {\r\n        this.setState({selectedItem});\r\n    }\r\n\r\n    render(){\r\n\r\n        const { selectedItem } = this.state;\r\n\r\n        return(\r\n            <Row\r\n                left={<PersonList onItemSelected={this.onItemSelected}/>}\r\n                right={<PersonDetails itemId={selectedItem}/>}/>\r\n        );\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/stardb/src/components/pages/people-page.js b/stardb/src/components/pages/people-page.js
+--- a/stardb/src/components/pages/people-page.js	(revision 110cecaffe28b655aecf832da316bb063a46ad45)
++++ b/stardb/src/components/pages/people-page.js	(date 1645809440611)
+@@ -1,24 +1,21 @@
+-import React, { Component } from "react";
+-import Row from "../row";
++import React, {useState} from "react";
++import {useNavigate, useParams} from 'react-router-dom';
+ import {PersonDetails, PersonList} from "../sw-components";
+-
+-export default class PeoplePage extends Component {
+-    state = {
+-        selectedItem: null
+-    }
++import Row from "../row";
+ 
+-    onItemSelected = (selectedItem) => {
+-        this.setState({selectedItem});
+-    }
++const PeoplePage = () => {
+ 
+-    render(){
+-
+-        const { selectedItem } = this.state;
+-
+-        return(
++    const [ selectedItem, setSelectedItem ] = useState(null);
++    const onItemSelected = (selectedItem) => {setSelectedItem(selectedItem)}
++    let navigate = useNavigate();
++    console.log(selectedItem);
++    return(
+             <Row
+-                left={<PersonList onItemSelected={this.onItemSelected}/>}
++                left={<PersonList onItemSelected={(itemId) => navigate(itemId)}/>}
+                 right={<PersonDetails itemId={selectedItem}/>}/>
+-        );
+-    }
+-}
+\ No newline at end of file
++    )
++
++}
++
++
++export default PeoplePage;
+\ No newline at end of file
+Index: stardb/src/components/app/app.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React, { Component } from 'react';\r\nimport Header from '../header';\r\nimport RandomPlanet from '../random-planet';\r\nimport ErrorBoundry from '../error-boundry';\r\nimport SwapiService from \"../../services/swapi-service\";\r\nimport DummySwapiService from \"../../services/dummy-swapi-service\";\r\n\r\nimport { PeoplePage, PlanetPage, StarshipPage } from \"../pages\";\r\nimport { SwapiServieProvider } from \"../swapi-service-context/swapi-service-context\";\r\n\r\nimport './app.css';\r\n\r\nimport {BrowserRouter as Router, Routes, Route, useParams} from 'react-router-dom';\r\nimport {StarshipDetails} from \"../sw-components\";\r\n\r\nexport default class App extends Component {\r\n\r\n    state = {\r\n        swapiService: new SwapiService()\r\n    };\r\n\r\n    onServiceChange = () => {\r\n      this.setState(({swapiService}) => {\r\n          const Service = swapiService instanceof SwapiService ? DummySwapiService : SwapiService;\r\n          return{\r\n              swapiService: new Service()\r\n          };\r\n      });\r\n    };\r\n\r\n    render() {\r\n        return (\r\n            <ErrorBoundry>\r\n                <SwapiServieProvider value={this.state.swapiService}>\r\n                    <Router>\r\n                        <div className=\"stardb-app\">\r\n                            <Header onServiceChange={this.onServiceChange} />\r\n                            <RandomPlanet />\r\n                            <Routes>\r\n                                <Route path=\"/\" element={<Welcome/>}/>\r\n                                <Route path=\"/people\" element={<PeoplePage/>} />\r\n                                <Route path=\"/planets\" element={<PlanetPage/>} />\r\n                                <Route path=\"/starships\" element={<StarshipPage/>} />\r\n                                <Route path=\"/starships/:id\" element={<StarshipDetails/>}/>\r\n                            </Routes>\r\n                        </div>\r\n                    </Router>\r\n                </SwapiServieProvider>\r\n            </ErrorBoundry>\r\n        );\r\n    }\r\n}\r\n\r\nconst Welcome = () =>{\r\n    return(\r\n        <h2>Welcome to StarDB</h2>\r\n    );\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/stardb/src/components/app/app.js b/stardb/src/components/app/app.js
+--- a/stardb/src/components/app/app.js	(revision 110cecaffe28b655aecf832da316bb063a46ad45)
++++ b/stardb/src/components/app/app.js	(date 1645809440636)
+@@ -11,7 +11,7 @@
+ import './app.css';
+ 
+ import {BrowserRouter as Router, Routes, Route, useParams} from 'react-router-dom';
+-import {StarshipDetails} from "../sw-components";
++import {PersonDetails, StarshipDetails} from "../sw-components";
+ 
+ export default class App extends Component {
+ 
+@@ -38,10 +38,15 @@
+                             <RandomPlanet />
+                             <Routes>
+                                 <Route path="/" element={<Welcome/>}/>
+-                                <Route path="/people" element={<PeoplePage/>} />
++                                <Route path="people">
++                                    <Route path="" element={<PeoplePage/>} />
++                                    <Route path=":id" element={<PersonDetails/>}/>
++                                </Route>
+                                 <Route path="/planets" element={<PlanetPage/>} />
+-                                <Route path="/starships" element={<StarshipPage/>} />
+-                                <Route path="/starships/:id" element={<StarshipDetails/>}/>
++                                <Route path="starships">
++                                    <Route path="" element={<StarshipPage/>}/>
++                                    <Route path="/starships/:id" element={<StarshipDetails/>}/>
++                                </Route>
+                             </Routes>
+                         </div>
+                     </Router>
+Index: stardb/src/components/pages/starships-page.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React from \"react\";\r\nimport { StarshipList } from \"../sw-components\";\r\nimport { useNavigate } from 'react-router-dom';\r\n\r\nconst StarshipPage = () => {\r\n    let navigate = useNavigate();\r\n\r\n    return(\r\n        <StarshipList onItemSelected = {(itemId) => navigate(itemId)}/>\r\n    );\r\n}\r\n\r\nexport default StarshipPage
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/stardb/src/components/pages/starships-page.js b/stardb/src/components/pages/starships-page.js
+--- a/stardb/src/components/pages/starships-page.js	(revision 110cecaffe28b655aecf832da316bb063a46ad45)
++++ b/stardb/src/components/pages/starships-page.js	(date 1645809440648)
+@@ -1,6 +1,6 @@
+ import React from "react";
+-import { StarshipList } from "../sw-components";
+ import { useNavigate } from 'react-router-dom';
++import { StarshipList } from "../sw-components";
+ 
+ const StarshipPage = () => {
+     let navigate = useNavigate();
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"4a0b4c5a-e5aa-49cb-878b-59028ba22dc9\" name=\"Changes\" comment=\"Merge remote-tracking branch 'origin/StarDB' into StarDB\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/stardb/src/components/header/header.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/stardb/src/components/header/header.js\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/stardb/src/components/pages/starships-page.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/stardb/src/components/pages/starships-page.js\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"HTML File\" />\r\n        <option value=\"CSS File\" />\r\n        <option value=\"JavaScript File\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"PREVIOUS_COMMIT_AUTHORS\">\r\n      <list>\r\n        <option value=\"Konstantin Kapatkov &lt;kotkat.lv@gmail.com&gt;\" />\r\n      </list>\r\n    </option>\r\n    <option name=\"PUSH_TAGS\">\r\n      <GitPushTagMode>\r\n        <option name=\"argument\" value=\"--follow-tags\" />\r\n        <option name=\"title\" value=\"Current Branch\" />\r\n      </GitPushTagMode>\r\n    </option>\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"todo\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitSEFilterConfiguration\">\r\n    <file-type-list>\r\n      <filtered-out-file-type name=\"LOCAL_BRANCH\" />\r\n      <filtered-out-file-type name=\"REMOTE_BRANCH\" />\r\n      <filtered-out-file-type name=\"TAG\" />\r\n      <filtered-out-file-type name=\"COMMIT_BY_MESSAGE\" />\r\n    </file-type-list>\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"25FaveHUCdFK2KcQt2ma9txSgUH\" />\r\n  <component name=\"ProjectLevelVcsManager\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"ASKED_ADD_EXTERNAL_FILES\" value=\"true\" />\r\n    <property name=\"ASKED_SHARE_PROJECT_CONFIGURATION_FILES\" value=\"true\" />\r\n    <property name=\"DefaultHtmlFileTemplate\" value=\"HTML File\" />\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\r\n    <property name=\"SHARE_PROJECT_CONFIGURATION_FILES\" value=\"true\" />\r\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\r\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$/stardb/src/components/error-indicator\" />\r\n    <property name=\"list.type.of.created.stylesheet\" value=\"CSS\" />\r\n    <property name=\"node.js.detected.package.eslint\" value=\"true\" />\r\n    <property name=\"node.js.selected.package.eslint\" value=\"(autodetect)\" />\r\n    <property name=\"nodejs_interpreter_path\" value=\"node\" />\r\n    <property name=\"nodejs_package_manager_path\" value=\"npm\" />\r\n    <property name=\"vue.rearranger.settings.migration\" value=\"true\" />\r\n  </component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"D:\\reactlearn\\stardb\\src\\components\\error-indicator\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"npm.npm start\">\r\n    <configuration name=\"Debug Application\" type=\"JavascriptDebugType\" uri=\"http://localhost:3000\">\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"npm start\" type=\"js.build_tools.npm\">\r\n      <package-json value=\"$PROJECT_DIR$/package.json\" />\r\n      <command value=\"run\" />\r\n      <scripts>\r\n        <script value=\"start\" />\r\n      </scripts>\r\n      <node-interpreter value=\"project\" />\r\n      <envs />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"4a0b4c5a-e5aa-49cb-878b-59028ba22dc9\" name=\"Changes\" comment=\"\" />\r\n      <created>1645125520251</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1645125520251</updated>\r\n      <workItem from=\"1645125522036\" duration=\"317000\" />\r\n      <workItem from=\"1645125859239\" duration=\"391000\" />\r\n      <workItem from=\"1645128212421\" duration=\"18889000\" />\r\n      <workItem from=\"1645260234371\" duration=\"14670000\" />\r\n      <workItem from=\"1645428328561\" duration=\"652000\" />\r\n      <workItem from=\"1645437285410\" duration=\"2649000\" />\r\n      <workItem from=\"1645446653148\" duration=\"1506000\" />\r\n      <workItem from=\"1645474888002\" duration=\"10546000\" />\r\n      <workItem from=\"1645537003963\" duration=\"95000\" />\r\n      <workItem from=\"1645556148780\" duration=\"3232000\" />\r\n      <workItem from=\"1645605343542\" duration=\"7447000\" />\r\n      <workItem from=\"1645612860719\" duration=\"1706000\" />\r\n      <workItem from=\"1645652787012\" duration=\"5462000\" />\r\n      <workItem from=\"1645690195331\" duration=\"12119000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Update README.md\">\r\n      <created>1645125874645</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1645125874645</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"Update README.md\">\r\n      <created>1645177808889</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1645177808889</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"Update README.md\">\r\n      <created>1645184465484</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1645184465484</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"Update README.md\">\r\n      <created>1645267750272</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1645267750272</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"Update README.md\">\r\n      <created>1645440261832</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1645440261832</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"Update README.md\">\r\n      <created>1645478248139</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1645478248139</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"Update README.md\">\r\n      <created>1645605949687</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1645605949687</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00008\" summary=\"Update README.md\">\r\n      <created>1645611930820</created>\r\n      <option name=\"number\" value=\"00008\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1645611930820</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00009\" summary=\"Update README.md\">\r\n      <created>1645612093850</created>\r\n      <option name=\"number\" value=\"00009\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1645612093850</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00010\" summary=\"Update README.md\">\r\n      <created>1645613956794</created>\r\n      <option name=\"number\" value=\"00010\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1645613956794</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00011\" summary=\"Delete README.md\">\r\n      <created>1645695789274</created>\r\n      <option name=\"number\" value=\"00011\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00011\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1645695789274</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00012\" summary=\"Merge remote-tracking branch 'origin/StarDB' into StarDB\">\r\n      <created>1645701771845</created>\r\n      <option name=\"number\" value=\"00012\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00012\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1645701771845</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"13\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <option name=\"ADD_EXTERNAL_FILES_SILENTLY\" value=\"true\" />\r\n    <MESSAGE value=\"Update README.md\" />\r\n    <MESSAGE value=\"Delete README.md\" />\r\n    <MESSAGE value=\"Merge remote-tracking branch 'origin/StarDB' into StarDB\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Merge remote-tracking branch 'origin/StarDB' into StarDB\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 110cecaffe28b655aecf832da316bb063a46ad45)
++++ b/.idea/workspace.xml	(date 1645809440670)
+@@ -3,8 +3,12 @@
+   <component name="ChangeListManager">
+     <list default="true" id="4a0b4c5a-e5aa-49cb-878b-59028ba22dc9" name="Changes" comment="Merge remote-tracking branch 'origin/StarDB' into StarDB">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/stardb/src/components/header/header.js" beforeDir="false" afterPath="$PROJECT_DIR$/stardb/src/components/header/header.js" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/stardb/src/components/app/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/stardb/src/components/app/app.js" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/stardb/src/components/item-details/item-details.js" beforeDir="false" afterPath="$PROJECT_DIR$/stardb/src/components/item-details/item-details.js" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/stardb/src/components/pages/people-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/stardb/src/components/pages/people-page.js" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/stardb/src/components/pages/starships-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/stardb/src/components/pages/starships-page.js" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/stardb/src/components/sw-components/person-details.js" beforeDir="false" afterPath="$PROJECT_DIR$/stardb/src/components/sw-components/person-details.js" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/stardb/src/components/sw-components/starship-details.js" beforeDir="false" afterPath="$PROJECT_DIR$/stardb/src/components/sw-components/starship-details.js" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -115,7 +119,9 @@
+       <workItem from="1645605343542" duration="7447000" />
+       <workItem from="1645612860719" duration="1706000" />
+       <workItem from="1645652787012" duration="5462000" />
+-      <workItem from="1645690195331" duration="12119000" />
++      <workItem from="1645690195331" duration="12146000" />
++      <workItem from="1645706961609" duration="618000" />
++      <workItem from="1645786087479" duration="6104000" />
+     </task>
+     <task id="LOCAL-00001" summary="Update README.md">
+       <created>1645125874645</created>
+@@ -201,7 +207,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1645701771845</updated>
+     </task>
+-    <option name="localTasksCounter" value="13" />
++    <task id="LOCAL-00013" summary="Merge remote-tracking branch 'origin/StarDB' into StarDB">
++      <created>1645703831498</created>
++      <option name="number" value="00013" />
++      <option name="presentableId" value="LOCAL-00013" />
++      <option name="project" value="LOCAL" />
++      <updated>1645703831498</updated>
++    </task>
++    <option name="localTasksCounter" value="14" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+Index: stardb/src/components/sw-components/starship-details.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React from \"react\";\r\nimport ItemDetails, { Record } from \"../item-details\";\r\nimport { withSwapiService } from '../hoc-helpers'\r\nimport { useParams } from \"react-router-dom\";\r\n\r\nconst StarshipDetails = (props) => {\r\n    const { id } = useParams();\r\n    return(\r\n        <ItemDetails {...props} itemId={id}>\r\n            <Record field=\"model\" label=\"Model\" />\r\n            <Record field=\"length\" label=\"Length\" />\r\n            <Record field=\"costInCredits\" label=\"Cost\" />\r\n        </ItemDetails>\r\n    )\r\n}\r\n\r\nconst mapMethodsToProps = (swapiService) => {\r\n    return{\r\n        getData: swapiService.getStarship,\r\n        getImageUrl: swapiService.getStarshipImage\r\n    }\r\n}\r\n\r\nexport default withSwapiService(mapMethodsToProps)(StarshipDetails);
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/stardb/src/components/sw-components/starship-details.js b/stardb/src/components/sw-components/starship-details.js
+--- a/stardb/src/components/sw-components/starship-details.js	(revision 110cecaffe28b655aecf832da316bb063a46ad45)
++++ b/stardb/src/components/sw-components/starship-details.js	(date 1645809440681)
+@@ -1,7 +1,7 @@
+ import React from "react";
++import { useParams } from "react-router-dom";
+ import ItemDetails, { Record } from "../item-details";
+ import { withSwapiService } from '../hoc-helpers'
+-import { useParams } from "react-router-dom";
+ 
+ const StarshipDetails = (props) => {
+     const { id } = useParams();
+Index: stardb/src/components/item-details/item-details.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React, { Component } from 'react';\r\n\r\nimport ErrorButton from '../error-button/error-button';\r\n\r\nimport './item-details.css';\r\n\r\nconst Record = ({ item, field, label }) => {\r\n    return (\r\n        <li className=\"list-group-item\">\r\n            <span className=\"term\">{label}</span>\r\n            <span>{ item[field] }</span>\r\n        </li>\r\n    );\r\n};\r\n\r\nexport {\r\n    Record\r\n};\r\n\r\nexport default class ItemDetails extends Component {\r\n\r\n    state = {\r\n        item: null,\r\n        image: null\r\n    };\r\n\r\n    componentDidMount() {\r\n        this.updateItem();\r\n    }\r\n\r\n    componentDidUpdate(prevProps) {\r\n        if (this.props.itemId !== prevProps.itemId ||\r\n            this.props.getData !== prevProps.getData ||\r\n            this.props.getImageUrl !== prevProps.getImageUrl) {\r\n            this.updateItem();\r\n        }\r\n    }\r\n\r\n    updateItem() {\r\n        const { itemId, getData, getImageUrl } = this.props;\r\n        console.log(itemId);\r\n        if (!itemId) {\r\n            return;\r\n        }\r\n\r\n        getData(itemId)\r\n            .then((item) => {\r\n                this.setState({\r\n                    item,\r\n                    image: getImageUrl(item)\r\n                });\r\n            });\r\n    }\r\n\r\n    render() {\r\n\r\n        const { item, image } = this.state;\r\n        if (!item) {\r\n            return <span>Select a item from a list</span>;\r\n        }\r\n\r\n        const { name } = item;\r\n\r\n        return (\r\n            <div className=\"item-details card\">\r\n                <img className=\"item-image\"\r\n                     src={image}\r\n                     alt=\"item\"/>\r\n\r\n                <div className=\"card-body\">\r\n                    <h4>{name}</h4>\r\n                    <ul className=\"list-group list-group-flush\">\r\n                        {\r\n                            React.Children.map(this.props.children, (child) =>\r\n                            {\r\n                                return React.cloneElement(child, { item });\r\n                            })\r\n                        }\r\n                    </ul>\r\n                    <ErrorButton />\r\n                </div>\r\n            </div>\r\n        );\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/stardb/src/components/item-details/item-details.js b/stardb/src/components/item-details/item-details.js
+--- a/stardb/src/components/item-details/item-details.js	(revision 110cecaffe28b655aecf832da316bb063a46ad45)
++++ b/stardb/src/components/item-details/item-details.js	(date 1645809440697)
+@@ -38,7 +38,6 @@
+ 
+     updateItem() {
+         const { itemId, getData, getImageUrl } = this.props;
+-        console.log(itemId);
+         if (!itemId) {
+             return;
+         }
