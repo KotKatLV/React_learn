@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { withBookstoreservice, withBookstoreService } from '../hoc';
 import { booksLoaded } from '../../actions'
 import BookListItem from '../book-list-item';
+import compose from '../../utils'
 
 
 class BookList extends Component {
@@ -43,6 +44,6 @@ const mapStateToProps = ({ books }) => {
 
 const mapDispatchToProps = { booksLoaded };
 
-export default  withBookstoreservice()(
-    connect(mapStateToProps, mapDispatchToProps)(BookList)
-);
+export default compose(
+    withBookstoreservice(),
+    connect(mapStateToProps, mapDispatchToProps))(BookList);
