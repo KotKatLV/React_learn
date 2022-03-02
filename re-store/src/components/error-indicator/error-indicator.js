@@ -10,3 +10,5 @@ const ErrorIndicator = () => {
         </div>
     )
 }
+
+export default ErrorIndicator;
