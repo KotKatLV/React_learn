@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
+import BookListItem from '../book-list-item';
+
 import { connect } from 'react-redux';
 
 import { withBookstoreservice } from '../hoc';
-import { fetchBooks, bookAddedToCart } from '../../actions'
-import BookListItem from '../book-list-item';
-import ErrorIndicator from '../error-indicator'
+import { fetchBooks, bookAddedToCart } from '../../actions';
+import compose  from '../../utils';
+
 import Spinner from '../spinner';
-import compose from '../../utils'
+import ErrorIndicator from '../error-indicator';
 
 import './book-list.css';
 
@@ -49,7 +51,7 @@ class BookListContainer extends Component {
   }
 }
 
-const mapStateToProps = ({ books, loading, error }) => {
+const mapStateToProps = ({ bookList: { books, loading, error }}) => {
   return { books, loading, error };
 };
 
@@ -62,6 +64,6 @@ const mapDispatchToProps = (dispatch, { bookstoreService }) => {
 };
 
 export default compose(
-    withBookstoreservice(),
-    connect(mapStateToProps, mapDispatchToProps)
+  withBookstoreservice(),
+  connect(mapStateToProps, mapDispatchToProps)
 )(BookListContainer);
