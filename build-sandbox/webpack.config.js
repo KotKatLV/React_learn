@@ -2,6 +2,17 @@ module.exports = {
     mode: "development",
     module: {
         rules: [
+
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: [
+                    {
+                        loader: 'babel-loader'
+                    }
+                ]
+            },
+
             {
                 test: /\.(jpg|jpeg|png|gif|ico)$/, 
                 use: [{ 
@@ -11,7 +22,8 @@ module.exports = {
                         name: '[name]-[sha1:hash:7].[ext]'
                     }
                 }]
-            }
+            },
+
             {
                 test: /\.(ttf|otf|eot|woff|woff2)$/, 
                 use: [{ 
