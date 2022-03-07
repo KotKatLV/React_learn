@@ -1,1 +1,1 @@
-Playing with webpack and app building
+Practice with webpack and app building
