@@ -2,8 +2,6 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import './main.scss'
 
-console.log(css.toString());
+const App = () => <p>This is WebPack React App</p>;
 
-const App = () => <p>Hello WOrld</p>;
-
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById('root'));
