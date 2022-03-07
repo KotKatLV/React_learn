@@ -16,7 +16,7 @@
   \************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (__webpack_require__.p + \"cb7f9ca8a9cd19896ed96fe16d20f354.jpg\");\n\n//# sourceURL=webpack://build-sandbox/./src/forest.jpg?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (__webpack_require__.p + \"images/forest-81e0cd6.jpg\");\n\n//# sourceURL=webpack://build-sandbox/./src/forest.jpg?");
 
 /***/ }),
 
