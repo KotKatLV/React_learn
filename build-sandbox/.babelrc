@@ -6,5 +6,7 @@
             "useBuiltIns": "usage",
             "debug": true,
             "modules": false
-        }]]
+        }],
+        "@babel/react"
+    ]
 }
