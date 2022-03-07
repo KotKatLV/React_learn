@@ -1,3 +1,5 @@
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 module.exports = {
     mode: "development",
     module: {
@@ -6,11 +8,7 @@ module.exports = {
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
-                use: [
-                    {
-                        loader: 'babel-loader'
-                    }
-                ]
+                loader: 'babel-loader'
             },
 
             {
@@ -37,20 +35,18 @@ module.exports = {
 
             {
                 test: /\.(css)$/,
-                use: [
-                    { loader: 'style-loader'},
-                    { loader: 'css-loader'}
-                ]
+                use: [ 'style-loader', 'css-loader']
             },
 
             {
                 test: /\.(s[ca]ss)$/,
-                use: [
-                    { loader: 'style-loader'},
-                    { loader: 'css-loader'},
-                    { loader: 'sass-loader'}
-                ]
+                use: ['style-loader','css-loader','sass-loader']
             }
         ]
-    }
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: 'public/index.html'
+        })
+    ]
 };
